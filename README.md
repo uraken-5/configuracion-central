@@ -13,9 +13,9 @@ spring.cloud.config.server.git.clone-on-start=true
 spring.cloud.config.server.git.default-label=main
 server.port=8888
 logging.level.web=DEBUG
+```
 
-
-```Descripción de Propiedades:
+Descripción de Propiedades:
 spring.cloud.config.server.git.uri: Especifica la URL del repositorio Git remoto que contiene la configuración. En este caso, apunta al repositorio https://github.com/uraken-5/server-config.
 
 spring.cloud.config.server.git.clone-on-start: Indica si el servidor de configuración debe clonar automáticamente el repositorio Git al iniciar. Está establecido como true, lo que significa que el repositorio se clonará al inicio del servidor.
