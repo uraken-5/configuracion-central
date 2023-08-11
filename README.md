@@ -38,3 +38,45 @@ spring.cloud.config.server.git.default-label: Establece la rama predeterminada (
 server.port: Especifica el puerto en el que se ejecutará el servidor de configuración. Se ha configurado como 8888.
 
 logging.level.web: Define el nivel de registro (logging) para las solicitudes web. En este caso, se ha establecido en DEBUG.
+
+# Prueba de funcionamiento
+
+Clona el proyecto, luego arranca el sistema Spring-boot y accede a las url:
+
+```
+http://localhost:8888/jc-central/dev
+```
+Recibiras las propiedades configuradas en el repositorio externo 
+
+```
+{
+    "name": "jc-central",
+    "profiles": [
+        "dev"
+    ],
+    "label": null,
+    "version": "b5032dc15de4977b2486fd39d69f8acdfd54a52e",
+    "state": null,
+    "propertySources": [
+        {
+            "name": "https://github.com/uraken-5/server-config/jc-central-dev.properties",
+            "source": {
+                "application.name": "Central configuration DEV for balto perrito esponjoso nueva properties agosto"
+            }
+        },
+        {
+            "name": "https://github.com/uraken-5/server-config/jc-central.properties",
+            "source": {
+                "application.name": "Central configuration default for balto"
+            }
+        }
+    ]
+}
+```
+
+Los valores permitidos son:
+
+- dev
+- prod
+- default
+
