@@ -1,9 +1,22 @@
-# configuracion-central
-Servicio que administra y centraliza las configuraciones de app y ambientes alimentandose de un repositorio remoto
-
 # Configuración Centralizada de Propiedades con Spring Cloud y Git
 
 Este proyecto utiliza Spring Cloud Config Server para implementar la configuración centralizada de propiedades desde un repositorio Git remoto.
+
+# Contexto
+
+Esta técnica es parte de un patrón arquitectónico en el contexto de microservicios, y se llama "Externalized Configuration" o "Configuración Externalizada". Este patrón se refiere a la práctica de mantener la configuración de una aplicación en un lugar externo y centralizado, en lugar de codificarla directamente en el código fuente de la aplicación.
+
+# Problema
+¿Cómo habilitar que un servicio se ejecute en múltiples entornos sin necesidad de modificaciones?
+
+## Que se requiere
+- Un servicio debe ser provisto con datos de configuración que le indiquen cómo conectarse a servicios externos o de terceros. Por ejemplo, la ubicación en la red de la base de datos y las credenciales.
+- Un servicio debe ejecutarse en múltiples entornos, como desarrollo, pruebas, control de calidad (QA), preparación (staging) y producción, sin necesidad de modificaciones y/o recompilaciones.
+- Diferentes entornos tienen diferentes instancias de servicios externos o de terceros, por ejemplo, una base de datos de pruebas versus una base de datos de producción, una cuenta de procesamiento de tarjetas de prueba versus una cuenta de procesamiento de tarjetas de producción.
+
+# Solución
+Externalizar toda la configuración de la aplicación, incluyendo las credenciales de la base de datos y la ubicación en la red. Al iniciar, un servicio lee la configuración desde una fuente externa, por ejemplo, variables de entorno del sistema operativo, etc.
+
 
 ## Archivo `application.properties`
 
